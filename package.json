@@ -1,0 +1,27 @@
+{
+    "name": "marblewolf",
+    "version": "1.0.0",
+    "description": "a group web-based video chat",
+    "main": "app.js",
+    "scripts": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/akrava/marblewolf.git"
+    },
+    "keywords": [
+        "webcam",
+        "video",
+        "chat"
+    ],
+    "author": "a_krava and others",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/akrava/marblewolf/issues"
+    },
+    "homepage": "https://github.com/akrava/marblewolf#readme",
+    "dependencies": {
+        "express": "^4.16.3"
+    }
+}
