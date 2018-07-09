@@ -5,6 +5,6 @@ app.get('/', function (req, res) {
     res.send('Marblewolf app running...');
 });
 
-app.listen(80, function () {
-    console.log('App listening on port 80!');
+app.listen(8080, function () {
+    console.log('App listening on port 8080!');
 });
