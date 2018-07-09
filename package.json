@@ -4,6 +4,7 @@
     "description": "a group web-based video chat",
     "main": "app.js",
     "scripts": {
+        "start": "node app.js",
         "test": "test"
     },
     "repository": {
