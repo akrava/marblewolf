@@ -4,7 +4,8 @@ const test = require('tape');
 
 // Start the app
 const env = Object.assign({}, process.env, {PORT: 8880});
-const child = spawn('node', ['app.js'], {env});
+const source = process.env.CODE_COVERAGE ? 'app.js' : 'app-cov.js';
+const child = spawn('node', [source], {env});
 
 test('responds to requests', (t) => {
     t.plan(3);
