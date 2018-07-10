@@ -20,7 +20,6 @@ cache:
 install:
   - npm install
 script:
-- npm test
+  - npm test
 branches:
-  only:
-- master
+  only: master
