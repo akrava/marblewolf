@@ -20,13 +20,13 @@ cache:
     - "node_modules"
 install:
   - npm install
-  - npm install npm install jest coveralls --save-dev
+  - npm install npm install istanbul coveralls --save-dev
 script:
   - npm test
 jobs:
   include:
     - stage: Produce Coverage
       node_js: node
-      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      script: node_modules/.bin/istanbul cover node_modules/.bin/tape test.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 branches:
   only: master
