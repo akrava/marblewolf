@@ -3,8 +3,8 @@ const request = require('request');
 const test = require('tape');
 
 // Start the app
-const env = Object.assign({}, process.env, {PORT: 8880});
-const source = process.env.CODE_COVERAGE ? 'app.js' : 'app-cov.js';
+const env = Object.assign({}, process.env, {PORT: 5000});
+const source = process.env.CODE_COVERAGE ? 'app-cov.js' : 'app.js';
 const child = spawn('node', [source], {env});
 
 test('responds to requests', (t) => {
@@ -14,7 +14,7 @@ test('responds to requests', (t) => {
     child.stdout.on('data', _ => {
         child.stdout.toString();
         // Make a request to our app
-        request('http://127.0.0.1:8880', (error, response, body) => {
+        request('http://127.0.0.1:5000', (error, response, body) => {
             // stop the server
             child.kill();
             // No error
