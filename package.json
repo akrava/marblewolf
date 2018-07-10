@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "start": "node app.js",
-        "test": "test"
+        "test": "node test.js"
     },
     "repository": {
         "type": "git",
@@ -13,8 +13,7 @@
     },
     "keywords": [
         "webcam",
-        "video",
-        "chat"
+        "video chat"
     ],
     "author": "a_krava and others",
     "license": "MIT",
@@ -23,6 +22,8 @@
     },
     "homepage": "https://github.com/akrava/marblewolf#readme",
     "dependencies": {
-        "express": "^4.16.3"
+        "express": "^4.16.3",
+        "request": "^2.87.0",
+        "tape": "^4.9.1"
     }
 }

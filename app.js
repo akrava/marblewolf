@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.get('/', function (req, res) {
     res.send('Marblewolf app running...');
 });
 
-app.listen(port, function () {
-    console.log('App listening on port ' + port + '!');
+app.listen(PORT, function () {
+    console.log('App listening on port ' + PORT + '!');
 });
