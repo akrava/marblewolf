@@ -18,22 +18,16 @@ matrix:
 cache:
   directories:
     - "node_modules"
-install:
-  - npm install
-  - npm install nodeunit jscoverage coveralls --save-dev
-script:
-  - npm test
-  - curl -Lo travis_after_all.py https://raw.github.com/dmakhno/travis_after_all/master/travis_after_all.py
-after_success:
-  - python travis_after_all.py https://api.travis-ci.com
-  - export $(cat .to_export_back)
-  - |
-      if [ "$BUILD_LEADER" = "YES" ]; then
-        if [ "$BUILD_AGGREGATE_STATUS" = "others_succeeded" ]; then
-          npm run coveralls
-        else
-          echo "Some jobs failed"
-        fi
-      fi
+
+jobs:
+  include:
+    - stage: tests
+      install:
+        - npm install
+        - npm install nodeunit jscoverage coveralls --save-dev
+      script:
+        - npm test
+    - stage: deploy to production
+      script: npm run coveralls
 branches:
   only: master
