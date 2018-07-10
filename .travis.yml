@@ -20,7 +20,7 @@ cache:
     - "node_modules"
 install:
   - npm install
-  - npm install npm install istanbul coveralls --save-dev
+  - npm install istanbul coveralls --save-dev
 script:
   - npm test
 jobs:
