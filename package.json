@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "start": "node app.js",
-        "test": "node test.js"
+        "test": "node test.js",
+        "coveralls": "jscoverage app.js && QUICKSORT_COV=1 nodeunit --reporter=lcov test.js | coveralls"
     },
     "repository": {
         "type": "git",
